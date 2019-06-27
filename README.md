@@ -1,16 +1,8 @@
 # loginapp
 
-UI inspired by dribbble
+Created using flutter, design was inspired from [here](https://dribbble.com/shots/6536634-Signup-Flow/attachments).
+Shout out to [Rumaan Khalander](https://dribbble.com/rumaank) for awesome and clean design.
 
-## Getting Started
+I'm adding some improvements such as validation on login screen and still working for validation on sign up screen.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+If there's any things that you can help me on the code I'm open for any comments and suggestions. 
