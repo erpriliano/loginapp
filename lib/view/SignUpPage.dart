@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:loginapp/component/SignUpComponent.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
+
+  @override
+  _SignUpPageState createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   Widget _buildAppBar(BuildContext context){
     return Container(
@@ -45,7 +52,12 @@ class SignUpPage extends StatelessWidget {
               _buildAppBar(context),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: SignUpComponent(),
+                // child: SignUpComponent(),
+                child: Form(
+                  key: _formKey,
+                  autovalidate: true,
+                  child: SignUpComponent(),
+                ),
               ),
             ],
           ),

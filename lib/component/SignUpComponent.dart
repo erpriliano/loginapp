@@ -29,11 +29,38 @@ class _SignUpComponentState extends State<SignUpComponent> {
     });
   }
 
+  String validateName(String value) {
+    if (value.length < 3 && value.isNotEmpty) {
+      return 'Name must be more than 2 characters';
+    } else {
+      return null;
+    }
+  }
+
+  String validateEmail(String value){
+    Pattern pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regex = new RegExp(pattern);
+
+    if(!regex.hasMatch(value) && value.isNotEmpty)
+      return 'Enter valid email';
+    else
+      return null;
+  }
+
+  String validatePass(String value) {
+    if(value.length < 6 && value.isNotEmpty) {
+      return 'Password must be 6 characters or more';
+    } else {
+      return null;
+    }
+  }
+
   List<Step> _listSteps() {
     List<Step> _steps = [
       Step(
         title: Text('Name'),
         content: TextFormField(
+          validator: validateName,
           decoration: InputDecoration(
             labelText: 'Enter your name',
             labelStyle: TextStyle(
@@ -46,6 +73,7 @@ class _SignUpComponentState extends State<SignUpComponent> {
       Step(
         title: Text('Email'),
         content: TextFormField(
+          validator: validateEmail,
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
             labelText: 'Enter your email',
@@ -59,6 +87,7 @@ class _SignUpComponentState extends State<SignUpComponent> {
       Step(
         title: Text('Password'),
         content: TextFormField(
+          validator: validatePass,
           obscureText: true,
           decoration: InputDecoration(
             labelText: 'Enter your password',
