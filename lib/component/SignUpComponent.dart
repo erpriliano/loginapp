@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'package:quiver/async.dart';
 
 class SignUpComponent extends StatefulWidget {
@@ -117,7 +116,6 @@ class _SignUpComponentState extends State<SignUpComponent> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Stepper(
       currentStep: this._currStep,
       steps: _listSteps(),

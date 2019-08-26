@@ -29,7 +29,6 @@ class _LoginComponentState extends State<LoginComponent> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Form(
       key: _formKey,
       autovalidate: true,
